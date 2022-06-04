@@ -1,0 +1,580 @@
+:root {
+    --input-color: #F0F0F1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    src: url(font/Vazir-Regular-FD.ttf);
+    font-family: vazir;
+}
+
+body {
+    background-color: rgb(221, 221, 221);
+    font-family: vazir;
+}
+
+header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20000;
+    box-shadow: 0 2px 7px -1px rgba(0, 0, 0, 0.5);
+}
+
+.shrink {
+    transition: 0.3s !important;
+}
+
+header.shrink nav {
+    height: 0;
+    padding: 0;
+    margin: 0;
+    padding-right: 2em;
+    margin-top: 1em;
+    overflow: hidden;
+    transition: 0.3s !important;
+}
+
+header.expanded nav {
+    height: 55px;
+    overflow: hidden;
+    transition: 0.3s !important;
+}
+
+div.modal-massage {
+    background-color: white;
+    color: #00b33c;
+    height: 150px;
+    width: 300px;
+    position: fixed;
+    top: -100%;
+    right: 50%;
+    transform: translateX(50%);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 8px -1px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000000;
+    transition: .5s ease-out;
+}
+
+div.active-modal {
+    top: 0;
+}
+
+header div.brand-search-accont div.logo-search-box {
+    flex-basis: 60%;
+}
+
+header div.brand-search-accont div.logo-search-box div.logo {
+    flex-basis: 20%;
+}
+
+header div.brand-search-accont div.logo-search-box div.search-box {
+    flex-basis: 70%;
+    margin: 10px 0;
+}
+
+header div.brand-search-accont div.logo-search-box div.search-box div.search {
+    height: 3em;
+    background-color: var(--input-color);
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+header div.brand-search-accont div.logo-search-box div.search-box form {
+    height: 100%;
+}
+
+header div.brand-search-accont div.logo-search-box div.search-box input {
+    width: 80%;
+    border: none;
+    height: 100%;
+    background-color: #F0F0F1;
+}
+
+header div.brand-search-accont div.logo-search-box div.search-box input:focus {
+    outline-width: 0;
+}
+
+header div.brand-search-accont div.logo-search-box div.search-box label {
+    color: rgb(185, 184, 184);
+}
+
+header div.brand-search-accont div.logo-search-box div.search-box label i {
+    font-size: 1.2em;
+    margin-left: 5px;
+}
+
+header div.brand-search-accont div.username-shopbasket {
+    flex-basis: 40%;
+}
+
+header div.brand-search-accont div.username-shopbasket div.user-accont {
+    flex-basis: 200px;
+    margin-left: 10px;
+}
+
+header div.brand-search-accont div.username-shopbasket div.user-accont::after {
+    content: "";
+    display: inline-block;
+    height: 1.5em;
+    width: 1px;
+    background-color: rgba(0, 0, 0, .1);
+    position: relative;
+    top: 8px;
+}
+
+header div.brand-search-accont div.username-shopbasket div.user-accont a {
+    border: 1px solid rgba(0, 0, 0, .1);
+    margin-left: 10px;
+}
+
+header div.brand-search-accont div.username-shopbasket div.shop-basket {
+    flex-basis: 40px;
+}
+
+div.shop-basket a {
+    box-shadow: none !important;
+}
+
+div.shop-basket i {
+    position: relative;
+}
+
+div.shop-basket span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-family: Helvetica;
+    background-color: red;
+    color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .6em;
+    transform: translate(50%, -50%);
+}
+
+header div.brand-search-accont div.username-shopbasket div.shop-basket a {
+    padding: 0;
+    color: rgba(0, 0, 0, 0.726);
+}
+
+header nav {
+    padding-right: 2em;
+    margin-top: 1em;
+    height: 55px;
+}
+
+header nav ul>li>a {
+    font-size: .8em !important;
+    position: relative;
+    border: none !important;
+    padding-bottom: 15px !important;
+}
+
+header nav ul>li>a::after {
+    content: "";
+    display: none;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #ff0000;
+}
+
+header nav ul>li>a:hover::after {
+    display: inline-block;
+}
+
+@media screen and (max-width:992px) {
+    header nav {
+        display: none;
+    }
+    header div.brand-search-accont div.username-shopbasket div.user-accont {
+        display: none;
+    }
+    header div.brand-search-accont div.username-shopbasket div.shop-basket {
+        display: none;
+    }
+    header div.brand-search-accont div.logo-search-box {
+        flex-basis: 90%;
+    }
+    header div.brand-search-accont div.username-shopbasket {
+        flex-basis: 0;
+    }
+}
+
+div.title {
+    margin-bottom: 1em;
+}
+
+div.title ul>li>a {
+    font-size: .9em;
+}
+
+div.title ul>li>a:hover {
+    background-color: lightsalmon;
+    color: white;
+}
+
+div.title ul>li i {
+    color: lightgray;
+}
+
+@media screen and (max-width:930px) {
+    div.title {
+        display: none;
+    }
+}
+
+figure {
+    margin: 0;
+    padding-top: 20px;
+}
+
+aside {
+    background-color: white;
+    width: 36%;
+    height: 100vh;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    z-index: 200000;
+    padding: 10px 25px;
+    overflow-y: auto;
+    transition: .5s ease-out;
+}
+
+aside div.button {
+    width: 100%;
+    text-align: left;
+}
+
+.active-sidebar {
+    left: 0 !important;
+}
+
+aside div.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin: 30px 0;
+}
+
+aside div.item p {
+    font-size: .9em;
+}
+
+div.title button {
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+}
+
+div.title button i {
+    transition: .2s;
+    padding: 3px;
+}
+
+div.title button i:hover {
+    color: red;
+}
+
+aside div.button button {
+    background-color: #ff0000;
+    color: white;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+    padding: 6px 15px;
+    border-radius: 10px;
+    margin: 20px;
+    transition: .3s;
+}
+
+aside div.button button:hover {
+    box-shadow: 0 0 8px -2px #ff0000;
+}
+
+aside div.item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+}
+
+aside img {
+    width: 30%;
+}
+
+aside div.total-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: -100%;
+    width: 36%;
+    z-index: 200000;
+    transition: .5s ease-out;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.445);
+    color: white;
+}
+
+main {
+    padding: 1.5em 0;
+    margin-top: 150px;
+}
+
+main section.products {
+    width: 90%;
+    margin: auto;
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+    padding: 3em 2em;
+    background-color: white;
+}
+
+main section.products div.row div.distance-between-row {
+    margin-bottom: 4em;
+    position: relative;
+}
+
+main section.products div.row div.card div.badg {
+    position: absolute;
+    width: 100%;
+    background-color: #ff0000;
+    z-index: 100;
+}
+
+main section.products div.row div.card div.badg span {
+    color: white;
+}
+
+main section.products div.row div.card figure {
+    margin: 0;
+}
+
+main section.products div.row div.card figure img {
+    padding: calc(7px + 1vw);
+    transition: .3s;
+}
+
+main section.products div.row div.card figure:hover img {
+    transform: scale(1.1);
+}
+
+main section.products div.row div.card figure::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    position: relative;
+    right: 100%;
+    transition: .3s;
+}
+
+main section.products div.row div.card figure:hover::after {
+    right: 0;
+}
+
+main section.products div.row div.distance {
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+main section.products div.row div.card div.des {
+    margin: 0 0 1.5em;
+    height: 6em;
+    padding: calc(7px + 1vw);
+}
+
+main section.products div.row div.card div.des p {
+    text-align: justify;
+}
+
+main section.products div.row div.card div.price {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 4em;
+}
+
+main section.products div.row div.card div.price span.old-price {
+    color: red;
+    text-decoration: line-through;
+}
+
+main section.products div.row div.card div.sale-info-btn button {
+    width: 100%;
+    border-radius: 0;
+    color: white;
+    transition: .3s;
+    box-shadow: none;
+}
+
+main section.products div.row div.card div.sale-info-btn button.sale {
+    background-color: #00b33c;
+    ;
+}
+
+main section.products div.row div.card div.sale-info-btn button.sale:hover {
+    background-color: #00cc44;
+}
+
+main section.products div.row div.card div.sale-info-btn button.information {
+    background-color: #e60000;
+}
+
+main section.products div.row div.card div.sale-info-btn button.information:hover {
+    background-color: #ff0000;
+}
+
+footer {
+    background-color: white;
+    margin-top: 2em;
+}
+
+footer div.top-part-of-footer {
+    margin-bottom: 2em;
+}
+
+footer div.top-part-of-footer div.about {
+    flex: 2;
+}
+
+footer div.top-part-of-footer div.about div.logo {
+    width: 50%;
+    margin: 2em 0 1em;
+}
+
+footer div.top-part-of-footer div.about div.phone-number span {
+    font-size: .9em;
+}
+
+footer div.top-part-of-footer div.about div.phone-number span#space {
+    color: rgba(128, 128, 128, 0.863);
+    margin: 0 10px;
+}
+
+footer div.top-part-of-footer div.comeback-button {
+    flex: .5;
+}
+
+@media screen and (max-width:768px) {
+    footer div.top-part-of-footer {
+        display: block !important;
+    }
+    footer div.top-part-of-footer div.about {
+        padding-top: 2em;
+    }
+    footer div.top-part-of-footer div.comeback-button {
+        margin-top: 3em;
+    }
+}
+
+footer div.top-part-of-footer div.comeback-button a {
+    border: 1px solid rgba(128, 128, 128, 0.521);
+    color: gray;
+}
+
+footer div.bottom-part-of-footer {
+    margin-top: 3em;
+}
+
+footer div.bottom-part-of-footer div.footer-part ul>li>a {
+    padding-right: 0 !important;
+    font-size: .94em;
+    color: gray;
+    transition: .3s;
+}
+
+footer div.bottom-part-of-footer div.footer-part ul>li>a:hover {
+    color: black;
+}
+
+footer div.bottom-part-of-footer div.footer-part ul>li>a>i {
+    font-size: 1.6em;
+    margin-left: 1em;
+    margin-top: 10px;
+    opacity: .7;
+    transition: .3s;
+}
+
+footer div.bottom-part-of-footer div.footer-part ul>li>a>i:hover {
+    opacity: 1;
+}
+
+footer div.bottom-part-of-footer div.footer-part div.email {
+    margin-top: 3em;
+}
+
+footer div.bottom-part-of-footer div.footer-part div.email div.title p {
+    font-size: 1.1em;
+}
+
+footer div.bottom-part-of-footer div.footer-part div.email form input {
+    border: none;
+    height: 2.5em;
+    background-color: var(--input-color);
+    padding: 0 10px;
+}
+
+footer div.bottom-part-of-footer div.footer-part div.email form input:focus {
+    outline-width: 0;
+}
+
+footer div.bottom-part-of-footer div.footer-part div.email button {
+    border: none;
+    height: 2.5em;
+    color: gray;
+}
+
+@media screen and (max-width:576px) {
+    main section.products div.row div.card div.des p {
+        font-size: calc(.8em + .9vw);
+        line-height: 2;
+    }
+}
+
+@media screen and (min-width:576px) {
+    main section.products div.row div.distance {
+        width: 48% !important;
+    }
+    main section.products div.row div.card div.des p {
+        font-size: calc(.8em + .4vw);
+        line-height: 2;
+    }
+}
+
+@media screen and (min-width:992px) {
+    main section.products div.row div.distance {
+        width: 24% !important;
+    }
+    main section.products div.row div.card div.des p {
+        font-size: calc(.8em + .2vw);
+        line-height: 1.5;
+    }
+}
